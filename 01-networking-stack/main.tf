@@ -1,0 +1,26 @@
+terraform {
+  backend "s3" {
+    bucket       = "gui-dvn-workshop-remote-backend-bucket"
+    key          = "networking/terraform.tfstate"
+    region       = "us-east-2"
+    use_lockfile = true
+  }
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0"
+    }
+  }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region = var.assume_role.region
+  default_tags {
+    tags = var.default_tags
+  }
+  assume_role {
+    role_arn = var.assume_role.arn
+
+  }
+}
