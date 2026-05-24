@@ -1,5 +1,3 @@
-# .gitignore recomendado para projeto Terraform
-# Ignorar diretórios e arquivos gerados pelo Terraform
 .terraform/
 *.tfstate
 *.tfstate.backup
@@ -9,9 +7,7 @@ override.tf.json
 *_override.tf
 *.tfvars
 *.tfvars.json
-# Não ignorar: .terraform.lock.hcl deve ser versionado (boa prática)
 
-# Arquivos de configuração locais e credenciais
 .terraform.d/
 .terraform/plugins/
 .aws/credentials
@@ -20,21 +16,19 @@ override.tf.json
 .env.local
 *.secret
 
-# IDEs e editores
+
 .vscode/
 .idea/
 *.iml
 
-# Sistema operacional
+
 .DS_Store
 Thumbs.db
 
-# Arquivos temporários e logs
 *.log
 *~
 *.swp
 
-# Outros
-# Ignorar arquivos de backup e secrets gerados acidentalmente
+
 *.bak
 *.backup
